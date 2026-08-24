@@ -1,0 +1,24 @@
+{
+  "name": "todo-api-foundations",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bipulshakya/todo-api-foundations.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/bipulshakya/todo-api-foundations/issues"
+  },
+  "homepage": "https://github.com/bipulshakya/todo-api-foundations#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
