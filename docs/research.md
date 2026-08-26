@@ -103,3 +103,46 @@ Example: A mobile banking app requests account details through an API. The API v
 Three API Names: i. Google Maps API
                  ii. Google Login API
                  iii. Weather Forcast API
+
+
+
+4.) **What is JSON?**
+
+Ans.JSON (JavaScript Object Notation) is a widely-used, lightweight data format for representing structured data.
+
+i. Used Extensively : Used in APIs, configuration files, and data exchange between servers and clients.
+
+ii. Text-based: JSON is a simple text format, making it lightweight and easy to transmit.
+
+iii. Human-readable: It uses key-value pairs, making the structure easy to understand.
+
+iv. Language-independent: While it is derived from JavaScript, JSON is supported by many programming languages including Python, Java, PHP, and more.
+
+v. Supported Data structures: Represents data as objects, arrays, strings, numbers, booleans, and null.
+
+Basically JSON chai Data exchange garna ko lagi commonly use hune language, jun chai API le use garxa server sanga communicate garna ko lagi.
+
+
+ **What is it, why did it win over XML, and what are its data types? Write out a small JSON object.**
+ Ans. JSON win over XML(Extensible Markup Language) because JSON chai ekdamai lightweight language ani Verbose haru ni kaam hunxa but XML le ja garna ni Opening ra Closing tag use garxa just like html jasko karan le XMl ekdamai heavy hunxa size ma (Eg: <name>Bipul</name>). JSON le chai JSON data haru directly maps garxa data structure vitra jun chai aauta programming language vitra built in hunxa(like maps, dictionaries, and lists), Ani XML le chai data haru lai tree structure ma represent garxa jasle garda developer haru le complex translation code lekhnu parxa memory vitra map garnu ko lagi. JSON ma chai Parsing garna sajilo kine vaneko yo chai natively parsed garna milxa aauta ready to use coding object vitra with a single, highly optimized line of code(such as JSON.parse() in javascript). JSON le chai native array support garxa tara XML le native array support gardaina.
+
+
+ ##Data types: String, number, boolean, null, object ({}), and array ([]).
+
+
+
+##Small JSON object
+ {
+  "name": "bipul",
+  "age": 22,
+  "skills": ["JavaScript", "Python", "SQL"],
+  "address": {
+    "city": "kathmandu",
+    "zip_code": "44600"
+  },
+  "mid_name": null
+}
+
+
+
+**The analogy that helped me**: XML vaneko chai aauta Wooden Create jastai vayo ani JSON vaneko chai Ziploc Bag.
