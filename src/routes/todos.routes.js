@@ -12,4 +12,17 @@ router.get("/", (req, res) => {
     res.status(200).json(todos);
 });
 
+//GET /todos/:id Return a single todo by id
+router.get("/:id", (req, res) => {
+    const id = Number(req.params.id);
+    const todo = todos.find((todo) => todo.id === id);
+
+    if (!todo) {
+         return res.status(404).json({
+            error: "Todo not found"
+         });
+    }
+    res.status(200).json(todo);
+});
+
 module.exports = router;
