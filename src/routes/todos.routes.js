@@ -66,4 +66,56 @@ router.post("/", (req, res) => {
   res.status(201).json(newTodo);
 });
 
+//PUT /todos/:id Update an existing todo by id
+router.put("/:id", (req, res) => {
+  const id = Number(req.params.id);
+
+  const index = todos.findIndex((todo) => todo.id === id);
+
+  // If the todo with the specified id is not found, return a 404 error response with a message indicating that the todo was not found.
+  if (index === -1) {
+    return res.status(404).json({
+      error: "Todo not found",
+    });
+  }
+
+  const { title, notes, priority, done } = req.body;
+
+
+  // Validate the title, priority, and done fields in the request body. If any of these fields are invalid, return a 400 error response with an appropriate error message.
+  if (typeof title !== "string" || title.trim() === "") {
+    return res.status(400).json({
+      error: "Title is required",
+    });
+  }
+
+  const allowedPriorities = ["low", "medium", "high"];
+
+  // Validate the priority field to ensure it is one of the allowed values. If it is not, return a 400 error response with an appropriate error message.
+  if (!allowedPriorities.includes(priority)) {
+    return res.status(400).json({
+      error: "Priority must be low, medium, or high",
+    });
+  }
+
+  // Validate the done field to ensure it is a boolean value. If it is not, return a 400 error response with an appropriate error message.
+  if (typeof done !== "boolean") {
+    return res.status(400).json({
+      error: "Done must be a boolean",
+    });
+  }
+
+
+  // Update the existing todo object with the new values from the request body. The title is trimmed of whitespace, and the notes, priority, and done status are updated with the new values provided in the request body.
+  todos[index] = {
+    id,
+    title: title.trim(),
+    notes: notes ?? "",
+    priority,
+    done,
+  };
+
+  res.status(200).json(todos[index]);
+});
+
 module.exports = router;
