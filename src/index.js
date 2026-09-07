@@ -4,6 +4,8 @@ const app = express();
 const PORT = 3000;
 const Hostname = "Localhost";
 
+//Express middleware to parse JSON request bodies
+app.use(express.json());
 
 //Health check 
 app.get("/health", (req, res) => {
@@ -18,7 +20,9 @@ app.get("/", (req, res) => {
     });
 });
 
+app.use("/todos", todosRoutes);
 
-const server = app.listen(PORT, Hostname, () => {
+
+app.listen(PORT, Hostname, () => {
     console.log(`Server is running on http://${Hostname}:${PORT}`);
 });
