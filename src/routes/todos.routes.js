@@ -151,14 +151,12 @@ router.put("/:id", (req, res) => {
     });
   }
 
-
   // Validate the done field to ensure it is a boolean value. If it is not, return a 400 error response with an appropriate error message.
   if (typeof done !== "boolean") {
     return res.status(400).json({
       error: "Done must be a boolean",
     });
   }
-
 
   // Update the existing todo object with the new values from the request body. The title is trimmed of whitespace, and the notes, priority, and done status are updated with the new values provided in the request body.
   todos[index] = {
@@ -172,6 +170,22 @@ router.put("/:id", (req, res) => {
   res.status(200).json(todos[index]);
 });
 
+//DELETE /todos/:id Delete an existing todo by id
+router.delete("/:id", (req, res) => {
+  const id = Number(req.params.id);
 
+  const index = todos.findIndex((todo) => todo.id === id);
+
+  // If the todo with the specified id is not found, return a 404 error response with a message indicating that the todo was not found.
+  if (index === -1) {
+    return res.status(404).json({
+      error: "Todo not found",
+    });
+  }
+
+  const deletedTodo = todos.splice(index, 1);
+
+  res.status(200).json(deletedTodo[0]);
+});
 
 module.exports = router;
