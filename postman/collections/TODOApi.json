@@ -1,0 +1,136 @@
+{
+  "info": {
+    "_postman_id": "a83dd1a7-f97e-49f7-bb6b-f5137ed2e8a1",
+    "name": "New Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "40892313",
+    "_collection_link": "https://go.postman.co/collection/40892313-a83dd1a7-f97e-49f7-bb6b-f5137ed2e8a1?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "GET",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://Localhost:3000/todos",
+          "protocol": "http",
+          "host": [
+            "Localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "todos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "    {\r\n        \"id\": 5,\r\n        \"title\": \"Practice Git\",\r\n        \"notes\": \"Practice commits and branches\",\r\n        \"priority\": \"medium\",\r\n        \"done\": true\r\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://Localhost:3000/todos",
+          "protocol": "http",
+          "host": [
+            "Localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "todos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "PUT",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": " {\r\n        \"title\": \"Practice Git\",\r\n        \"notes\": \"Practice commits and branches\",\r\n        \"priority\": \"medium\",\r\n        \"done\": false\r\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://Localhost:3000/todos/1",
+          "protocol": "http",
+          "host": [
+            "Localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "todos",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "DELETE",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://Localhost:3000/todos/2",
+          "protocol": "http",
+          "host": [
+            "Localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "todos",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Check Deleted request",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ]
+}
