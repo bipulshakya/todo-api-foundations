@@ -1,2 +1,6 @@
 ## req.params.id is string
 URL ko paramaters arrive through Express as strings.Ani find() function le tyo String "2" lai Number 2 sanga compare garxa ani as a result 404 error fekxa so maile, Number() use garera tyo string lai number ma convert garxu at first ani balla numeric id sanga compare garxu jun chai array vitra store vako xa.
+
+## typeof title !== "string" its checks whether title isn't a string
+
+## title.trim() === "" its checks whether the title is empty or only whitespace
